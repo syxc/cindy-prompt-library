@@ -1,0 +1,42 @@
+:root {
+  color-scheme: light dark;
+  --base: var(--surface, light-dark(#f7f7f5, #191a1c));
+  --card: var(--surface-raised, light-dark(#fff, #242528));
+  --ink: var(--text-primary, light-dark(#191a1c, #f2f2f2));
+  --muted: var(--text-secondary, light-dark(#55585e, #b8bac0));
+  --line: var(--border-default, light-dark(#d9d9d9, #494a50));
+  --danger: var(--text-danger, light-dark(#a62030, #ff9ba5));
+  background: var(--base);
+  color: var(--ink);
+  font: 15px/1.5 system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { margin: auto; max-width: 760px; padding: clamp(14px, 5vw, 40px); }
+header, .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+header { justify-content: space-between; gap: 12px; }
+h1, h2, p, ul { margin: 0; }
+h1 { font-size: 26px; }
+h2 { font-size: 17px; }
+ul { list-style: none; padding: 0; display: grid; gap: 10px; }
+#status { padding-block: 6px; min-height: 34px; }
+#empty, li, dialog { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+#empty { color: var(--muted); }
+li, dialog { overflow-wrap: anywhere; }
+.preview { color: var(--muted); margin: 5px 0 12px; white-space: pre-wrap; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+button, input, textarea { font: inherit; color: inherit; }
+button { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+button:hover:not(:disabled) { box-shadow: inset 0 0 0 1px currentColor; }
+button:disabled { opacity: .55; cursor: default; }
+.primary { color: var(--base); background: var(--ink); border-color: transparent; font-weight: 600; }
+.danger, .error { color: var(--danger); }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+dialog { width: min(560px, calc(100% - 24px)); color: var(--ink); }
+dialog::backdrop { background: rgb(0 0 0 / 45%); }
+form { display: grid; gap: 12px; }
+form .actions { justify-content: flex-end; }
+label { display: grid; gap: 5px; font-weight: 600; }
+input, textarea { min-width: 0; width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--base); font-weight: 400; }
+textarea { resize: vertical; max-height: 46vh; }
+.error:empty { display: none; }
+.clipboard-buffer { position: fixed; left: -10000px; top: 0; }

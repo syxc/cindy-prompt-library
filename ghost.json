@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 3,
+  "minCindyVersion": "0.1.140",
+  "id": "prompt-library",
+  "name": "提示词",
+  "description": "从左侧导航打开，新增、编辑、删除和一键复制自己的提示词。只保存在本机。",
+  "version": "0.1.0",
+  "entry": "main.js",
+  "mainView": {
+    "html": "main-view.html"
+  }
+}
